@@ -1,5 +1,4 @@
 const siftOps = {
-  // 'lessThan' : '$lt',
   _all: '$all',
   _and: '$and',
   _elemMatch: '$elemMatch',
@@ -21,8 +20,6 @@ const siftOps = {
   $regexOptions: '$options',
   _size: '$size',
   _type: '$type',
-  // $where: "this.name === 'frank'"
-  // _where: "$where",
   _where: "DISABLED",
   $where: "DISABLED",
 }
@@ -64,23 +61,7 @@ const pick = (path = 'path.key', data = { path: { key: true } }) =>
     )
   }, data)
 
-// const mergeData = (args = {}) =>
-//   Object.entries(args).reduce((data, entry) => {
-//     if (entry[0][0] === '_' && objectType(entry[1]) === 'object')
-//       return {
-//         ...data,
-//         ...entry[1],
-//         [entry[0]]: entry[1],
-//       }
-//     else
-//       return {
-//         ...data,
-//         [entry[0]]: entry[1],
-//       }
-//   }, {})
-
 module.exports = {
-  // mergeData,
   formatFilters,
   objectType,
   pick,
